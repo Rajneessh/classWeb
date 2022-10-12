@@ -1,0 +1,45 @@
+
+{% extends "classWork/base.html"%}
+<title>
+    Excel File Processing
+</title>
+{% block content%}
+    <center>
+        <form action="{% url 'excelProcessing' %}" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <input type="file" title="Excel File" name="File" style="border: 1px solid black; padding: 5px;"
+            required="required">
+        <p>
+            <input type="submit" value="upload" style="border:1px solid green; padding:5px; border-radius: 2px; cursor: pointer">
+        </form>
+        </p>
+        <hr>
+        
+        {% if excelData %}
+            <table style="border: 1px solid black;width:75%;">
+
+                <tr style="height:50px;">
+                    <th style="text-align:center;font-size: 15px; border-right: 1px solid black;background-color:aquamarine;">Numbers in the Excel file</th>
+                    <th style="text-align: center;font-size: 15px; border-left: 1px solid black; background-color: beige;">{{numList}}</th>
+                </tr>
+
+                <tr style="height:50px;">
+                    <th style="text-align:center;font-size: 15px; border-right: 1px solid black;background-color:aquamarine;">Float numbers in the Excel file</th>
+                    <th style="text-align: center;font-size: 15px; border-left: 1px solid black; background-color: beige;">{{floatList}}</th>
+                </tr>
+
+                <tr style="height:50px;">
+                    <th style="text-align:center;font-size: 15px; border-right: 1px solid black;background-color:aquamarine;">Rest of the elements in the Excel file</th>
+                    <th style="text-align: center;font-size: 15px; border-left: 1px solid black; background-color: beige;">{{stringList}}</th>
+                </tr>
+                
+                <tr style="height:50px;">
+                    <th style="text-align:center;font-size: 15px; border-right: 1px solid black;background-color:aquamarine;">Sum of all the digits in the Excel is</th>
+                    <th style="text-align: center;font-size: 15px; border-left: 1px solid black; background-color: beige;">{{sum}}</th>
+                </tr>
+        {% else %}
+            <h1 style="text-align: center;">Upload an excel file</h1>
+        {%endif%}
+        </table>    
+    </center>
+{% endblock%}

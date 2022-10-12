@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classwork</title>
+    <style>
+        ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div style="color:black">
+        <ul>
+            <li> <h2 style="background-color:lightslategray;font-size: 15px;"><center>Rajneesh Rajan 02-ITE-2020</center></h2></li>
+            <li style="float: right;"><button style="border-radius: 10px;background-color: rgb(109, 109, 151);width: 50px;height: 25px;"><a style="color:white;font-size: 12px; font-family:Verdana, Geneva, Tahoma, sans-serif;" href="{% url 'maths'%}">Maths</a></button></li>
+            <li style="float: right;padding-left: 10px;"><button style="border-radius: 10px;background-color: rgb(109, 109, 151); width: 50px;height: 25px;"><a style="color:white;font-size: 12px; font-family:Verdana, Geneva, Tahoma, sans-serif;" href="{% url 'class'%}">Class</a></button></li>
+            <li style="float: left;"><button style="border-radius: 10px;background-color: rgb(109, 109, 151);width: 50px;height: 25px;"><a style="color:white;font-size: 12px; font-family:Verdana, Geneva, Tahoma, sans-serif;" href="{% url 'home'%}">Home</a></button></li>
+        </ul>
+    </div>
+
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

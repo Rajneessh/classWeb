@@ -1,0 +1,21 @@
+{% extends "classWork/base.html"%}
+{%block content%}
+<br>
+<div>
+    <table  align="center" border="2px" style="size: 100%; border-collapse: collapse;">
+        <tr style="width: 100%;">
+            <th>
+                <button style="width: 250px;height:30px; background-color:rgb(109, 109, 151);">
+                    <a style="font-size:large ; color: white;" href="{% url 'add' %}">Addition</a>
+                </button>
+            </th>
+        </tr>   
+        <tr>
+            <th>
+                <button style="width: 250px;height:30px; background-color:rgb(109, 109, 151);">
+                    <a style="font-size:large;color: white;" href="{% url 'sub' %}">Subtraction</a>
+                </button>
+            </th>
+        </tr>
+</div> 
+{% endblock%}

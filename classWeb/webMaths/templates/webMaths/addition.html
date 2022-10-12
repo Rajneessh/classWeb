@@ -1,0 +1,28 @@
+{% extends "classWork/base.html"%}
+{%block content%}
+    <style>
+        table,th,td{
+            align-content: center;
+            border-color: black;
+        }
+    </style>
+    <br><br><br><br><br>
+
+    <form action="{% url 'addResult' %}">
+        <table align="center">
+            <tr>
+                <th>Enter Number 1</th>
+                <th><input type="text" name="num1" id="num1"></th>
+            </tr>
+            <tr>
+
+                <th>Enter Number 2</h6></th>
+                <th><input type="text" name="num2" id="num2"></th>
+            </tr>
+
+            <tr>
+                <th colspan="2"><input type="submit" name="submit" id="submit"></th>
+            </tr>
+        </table>
+    </form>
+{% endblock%}
